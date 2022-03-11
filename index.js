@@ -1,6 +1,21 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  const obj = {};
+  for (let i=0; i < array.length; i++) {
+    if(obj[array[i]]) {
+      obj[array[i]] += 1
+    } else {
+      obj[array[i]] = 1
+    }
+  }
+  for (let i=0; i< array.length; i++) {
+    let complement = target - array[i];
+    if (array[i] === obj.complement) {
+      return true
+    }
+  }
+  return false
 }
+  
 
 /* 
   Write the Big O time complexity of your function here
